@@ -13,13 +13,13 @@ export default function Footer() {
               {siteConfig.name}
             </a>
             <p className="mt-2 text-sm text-gray-500">
-              Drafte tes bots. Farme le marché.
+              Automated arbitrage trading for crypto markets.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Liens</h4>
+            <h4 className="text-sm font-semibold text-white mb-4">Links</h4>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
@@ -61,12 +61,12 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="pt-8 border-t border-crypto-border">
           <p className="text-xs text-gray-600 leading-relaxed">
-            <strong>Disclaimer :</strong> {siteConfig.name} est un produit spéculatif destiné à des fins divertissantes.
-            Ce n&apos;est pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures.
-            Ne joue qu&apos;avec ce que tu peux perdre. Le trading de crypto-actifs comporte des risques élevés.
+            <strong>Disclaimer:</strong> {siteConfig.name} involves significant risk.
+            This is not investment advice. Past performance does not guarantee future results.
+            Only trade with funds you can afford to lose. Cryptocurrency trading carries high risk.
           </p>
           <p className="text-xs text-gray-700 mt-4">
-            © {currentYear} {siteConfig.name}. Tous droits réservés.
+            © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
         </div>
       </div>

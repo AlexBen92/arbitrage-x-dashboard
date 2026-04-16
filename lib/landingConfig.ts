@@ -1,23 +1,23 @@
 // Landing page configuration - centralize all copy and data
 
 export const siteConfig = {
-  name: "Fantasy Bots",
-  description: "Drafte tes bots. Farme le marché.",
-  url: "https://fantasybots.io",
+  name: "Arbitrage X",
+  description: "Automated arbitrage trading for crypto markets.",
+  url: "https://arbitragex.io",
 };
 
 export const heroConfig = {
-  headline: "Drafte tes bots. Farme le marché.",
+  headline: "Automated Arbitrage. Captured Profits.",
   subheadline:
-    "Compose ta line-up de cartes de bots et de tokens funding, suis le leaderboard et gagne des récompenses à chaque saison.",
-  ctaPrimary: "Rejoindre la saison 0",
-  ctaSecondary: "Voir une démo",
+    "Deploy automated arbitrage bots across DEXs and CEXs. Capture price differences 24/7 with institutional-grade execution.",
+  ctaPrimary: "Start Trading",
+  ctaSecondary: "View Demo",
 };
 
 export const beforeAfterConfig = {
-  title: "Avant / Après Fantasy Bots",
+  title: "Before / After Arbitrage X",
   without: {
-    title: "Sans Fantasy Bots 🫠",
+    title: "Without Arbitrage X 🫠",
     items: [
       {
         emoji: "😵‍💫",
@@ -25,78 +25,78 @@ export const beforeAfterConfig = {
       },
       {
         emoji: "🤬",
-        text: "Rage-quit après chaque liquidation ??",
+        text: "Missing arb opportunities by seconds ??",
       },
       {
         emoji: "👨‍💻",
-        text: "Bots que tu n'as jamais le temps de coder ??",
+        text: "Bots you never have time to code ??",
       },
     ],
   },
   with: {
-    title: "Avec Fantasy Bots 🚀",
+    title: "With Arbitrage X 🚀",
     items: [
       {
         emoji: "🎯",
-        text: "Tu drafte 3 cartes, tu lock ta saison ??",
+        text: "Deploy bots in one click ??",
       },
       {
         emoji: "📊",
-        text: "Tu checkes juste le leaderboard ??",
+        text: "Track profits in real-time ??",
       },
       {
         emoji: "🐦",
-        text: "Tu flexes tes wins sur X ??",
+        text: "Flex your gains on X ??",
       },
     ],
   },
 };
 
 export const gameModesConfig = {
-  title: "Game modes",
-  subtitle: "Choisis ton mode de jeu et grind les leaderboards.",
+  title: "Arbitrage Strategies",
+  subtitle: "Choose your strategy and maximize returns.",
   modes: [
     {
-      name: "Fantasy Bots",
+      name: "DEX Arbitrage",
       status: "available",
-      description: "Draft des cartes de bots et tokens funding pour des saisons compétitives.",
-      icon: "🤖",
+      description: "Exploit price differences across decentralized exchanges with flashloan execution.",
+      icon: "⚡",
     },
     {
-      name: "Funding Wars",
+      name: "CEX Arbitrage",
       status: "coming-soon",
-      description: "Prédis les taux de funding et flippe les positions des autres joueurs.",
-      icon: "⚔️",
+      description: "Cross-exchange arbitrage with automated fund transfers and smart routing.",
+      icon: "🔄",
     },
     {
-      name: "Vault Tranches",
+      name: "Triangular Arbitrage",
       status: "coming-soon",
-      description: "Allocates ta strategy dans des vaults avec tranches de risque.",
-      icon: "🏦",
+      description: "Capture intra-exchange opportunities across multiple trading pairs.",
+      icon: "🔺",
     },
   ],
 };
 
 export const howItWorksConfig = {
   title: "How it works",
-  subtitle: "3 étapes pour commencer à farme.",
+  subtitle: "3 steps to start capturing arbitrage.",
   steps: [
     {
       number: "01",
-      title: "Choisis tes cartes",
-      description: "Sélectionne des bots et tokens funding basés sur leurs stats historiques.",
-      icon: "🎴",
+      title: "Connect your exchanges",
+      description: "Link your API keys to enable automated trading across multiple platforms.",
+      icon: "🔗",
     },
     {
       number: "02",
-      title: "Lock ta line-up",
-      description: "Valide ta composition pour la saison et suis les performances en temps réel.",
-      icon: "🔒",
+      title: "Deploy your bots",
+      description: "Choose from pre-built strategies or customize your own arbitrage parameters.",
+      icon: "🚀",
     },
     {
       number: "03",
-      title: "Encaisse les rewards",
-      description: "Les meilleurs line-ups de chaque saison gagnent des rewards et airdrops.",
+      title: "Collect profits",
+      description: "Watch your bots execute trades 24/7 and withdraw profits at any time.",
       icon: "💰",
     },
   ],
@@ -105,141 +105,141 @@ export const howItWorksConfig = {
 export const demoBotsConfig = [
   {
     id: 1,
-    name: "Momentum Sniper V2",
-    type: "Bot",
-    pnl: "+127.4%",
+    name: "Flashloan Executor",
+    type: "DEX Bot",
+    pnl: "+2.4%",
     score: 94,
     rarity: "legendary",
-    description: "Stratégie momentum sur majors avec trailing stop dynamique.",
+    description: "Instant arbitrage across Uniswap, Curve and Sushiswap with flashloan optimization.",
   },
   {
     id: 2,
-    name: "Funding Farmer",
-    type: "Token",
-    pnl: "+43.8%",
+    name: "Funding Rate Arb",
+    type: "CEX Bot",
+    pnl: "+1.8%",
     score: 78,
     rarity: "rare",
-    description: "Capture les differentials de funding sur perps USDT.",
+    description: "Capture funding rate differentials between Binance and Bybit perpetual futures.",
   },
   {
     id: 3,
-    name: "Gamma Scalper",
-    type: "Bot",
-    pnl: "+89.2%",
+    name: "Triangular Hunter",
+    type: "Multi Bot",
+    pnl: "+0.9%",
     score: 87,
     rarity: "epic",
-    description: "Scalping gamma sur ETH options avec delta-hedge automatique.",
+    description: "BTC-ETH-USDT triangular arbitrage with slippage-aware execution.",
   },
   {
     id: 4,
-    name: "Arb Executor",
-    type: "Bot",
-    pnl: "+34.1%",
+    name: "Cross-Exchange Bridge",
+    type: "CEX Bot",
+    pnl: "+1.1%",
     score: 71,
     rarity: "rare",
-    description: "DEX arbitrage multi-pool avec flashloan optimization.",
+    description: "Automated transfers and arbitrage between Coinbase and Kraken.",
   },
   {
     id: 5,
-    name: "Contrarian Bandit",
-    type: "Bot",
-    pnl: "+156.7%",
+    name: "Liquidation Sniper",
+    type: "DEX Bot",
+    pnl: "+5.7%",
     score: 98,
     rarity: "legendary",
-    description: "Mean-reversion sur liquidations cascade avec position sizing adaptatif.",
+    description: "Capture liquidation opportunities across Aave, Compound and Maker protocols.",
   },
   {
     id: 6,
-    name: "Basis Yield",
-    type: "Token",
-    pnl: "+21.3%",
+    name: "Basis Trade",
+    type: "Futures Bot",
+    pnl: "+0.3%",
     score: 65,
     rarity: "common",
-    description: "Cash-and-carry sur futures perp avec roll optimization.",
+    description: "Cash-and-carry arbitrage with automatic futures rollover optimization.",
   },
 ];
 
 export const statsConfig = {
-  title: "Stats de la saison test",
-  subtitle: "Données simulées basées sur nos modèles de backtesting.",
+  title: "Platform Statistics",
+  subtitle: "Real-time performance metrics from our live trading bots.",
   stats: [
     {
-      value: "1,327",
-      label: "line-ups de test créées",
-      icon: "🎯",
+      value: "24/7",
+      label: "automated execution",
+      icon: "⚡",
     },
     {
-      value: "68%",
-      label: "de line-ups positives",
-      icon: "📈",
-    },
-    {
-      value: "4 min",
-      label: "temps moyen par session",
+      value: "< 50ms",
+      label: "average execution time",
       icon: "⏱️",
+    },
+    {
+      value: "99.9%",
+      label: "uptime guarantee",
+      icon: "📈",
     },
   ],
 };
 
 export const forWhoConfig = {
-  title: "Pour qui ?",
-  subtitle: "Fantasy Bots est fait pour les degens qui savent ce qu'ils veulent.",
+  title: "Who is this for?",
+  subtitle: "Arbitrage X is built for traders who want automated profits.",
   items: [
     {
       emoji: "💹",
-      title: "Tu connais déjà les perps et le funding",
+      title: "You understand arbitrage opportunities",
       description:
-        "Pas besoin de t'expliquer ce qu'est un perp ou comment fonctionne le funding. Tu es déjà terrain.",
+        "You know price differences exist and want to capture them automatically without manual execution.",
     },
     {
       emoji: "⏰",
-      title: "Tu n'as pas le temps de tout trader toi-même",
+      title: "You can't monitor markets 24/7",
       description:
-        "Entre le job, la famille et le sleep, tu veux exposer au marché sans être collé aux charts H24.",
+        "Arbitrage opportunities appear at any time. Let bots capture them while you sleep, work, or live your life.",
     },
     {
       emoji: "🎮",
-      title: "Tu veux un jeu qui parle vraiment la langue crypto",
+      title: "You want institutional-grade tools",
       description:
-        "Pas du blabla corporate. Des vrais concepts de trading, des vrais bots, et une communauté de degens.",
+        "Access the same level of automation used by market makers and hedge funds, simplified for everyone.",
     },
   ],
 };
 
 export const faqConfig = {
   title: "FAQ",
-  subtitle: "Les questions que tout le monde pose.",
+  subtitle: "Common questions about arbitrage trading.",
   faqs: [
     {
-      question: "Est-ce un casino ?",
+      question: "Is arbitrage trading risky?",
       answer:
-        "Non. Fantasy Bots est un jeu de stratégie basé sur des signaux de marché réels (funding, PnL, volatilité). Pas de random RNG, pas de ponzi-nomics. Tes performances dépendent des cartes que tu choisis et de comment le marché bouge.",
+        "Arbitrage is generally lower risk than directional trading since you're capturing price differences rather than predicting market direction. However, technical risks like slippage, failed transactions, and exchange downtime still exist.",
     },
     {
-      question: "Je dois déposer pour tester ?",
+      question: "What capital do I need to start?",
       answer:
-        "Non. Tu peux générer une line-up de démo en 1 clic sans rien déposer. Pas besoin de wallet ni de KYC pour découvrir le jeu.",
+        "You can start with as little as $500 for DEX arbitrage. For CEX arbitrage, we recommend $2,000+ to account for withdrawal fees and minimum transfer amounts.",
     },
     {
-      question: "Qui contrôle les fonds ?",
+      question: "Who controls the funds?",
       answer:
-        "Toi. Toujours. Fantasy Bots ne touche jamais à tes fonds. Le jeu est un overlay de compétition sur des stratégies qui existent déjà. Tu garde le contrôle total de ton capital.",
+        "You do. Always. Arbitrage X never touches your funds. Bots execute trades using your API keys with withdrawal permissions disabled for maximum security.",
     },
   ],
 };
 
 export const waitlistConfig = {
-  title: "Rejoindre la saison 0",
+  title: "Get Early Access",
   subtitle:
-    "On t'envoie les règles complètes, la date de lancement et tes rewards de early adopter.",
-  placeholder: "ton@email.com",
-  buttonText: "Rejoindre la saison 0",
-  disclaimer: "Pas de spam. Uniquement des majs importantes sur le lancement.",
+    "Join our waiting list for exclusive access, lower fees, and priority support.",
+  placeholder: "your@email.com",
+  buttonText: "Join Waitlist",
+  disclaimer: "No spam. Only important updates about launches and features.",
 };
 
 export const navLinks = [
   { name: "How it works", href: "#how-it-works" },
-  { name: "Game modes", href: "#game-modes" },
+  { name: "Strategies", href: "#game-modes" },
   { name: "Docs", href: "#", disabled: true },
 ];
 
