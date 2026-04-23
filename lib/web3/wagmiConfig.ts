@@ -1,34 +1,47 @@
 'use client';
 
-import { getDefaultConfig } from '@rainbow-me/rainbowkit';
+import { http, createConfig } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
+import { walletConnect, injected, coinbaseWallet } from 'wagmi/connectors';
 
 // Get NEXT_PUBLIC_ prefixed variables only (safe for client-side)
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '00000000000000000000000000000000';
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'e10a8dca90396d988c101f1da7929e44';
 const infuraApiKey = process.env.NEXT_PUBLIC_INFURA_API_KEY || '';
 
-// Custom Sepolia config with public RPCs
+// RPC URLs with fallbacks
+const rpcUrls = [
+  'https://rpc.sepolia.org',
+  'https://sepolia.deth.org',
+  ...(infuraApiKey ? [`https://sepolia.infura.io/v3/${infuraApiKey}`] : []),
+];
+
+// Custom Sepolia config
 export const customSepolia = {
   ...sepolia,
   rpcUrls: {
-    default: {
-      http: [
-        'https://rpc.sepolia.org',
-        'https://sepolia.deth.org',
-        ...(infuraApiKey ? [`https://sepolia.infura.io/v3/${infuraApiKey}`] : []),
-      ],
-    },
-    public: {
-      http: ['https://rpc.sepolia.org', 'https://sepolia.deth.org'],
-    },
+    default: { http: rpcUrls },
+    public: { http: ['https://rpc.sepolia.org', 'https://sepolia.deth.org'] },
   },
 };
 
-export const wagmiConfig = getDefaultConfig({
-  appName: 'Arbitrage X',
-  projectId,
+// Create wagmi config with proper connectors
+export const wagmiConfig = createConfig({
   chains: [customSepolia],
-  ssr: true, // Enable for Next.js SSR
+  connectors: [
+    walletConnect({
+      projectId,
+      showQrModal: false, // Use RainbowKit's modal instead
+    }),
+    injected({ shimDisconnect: true }),
+    coinbaseWallet({
+      appName: 'Arbitrage X',
+      appLogoUrl: 'https://arbitrage-x-psi.vercel.app/icon-192.png',
+    }),
+  ],
+  ssr: true,
+  transports: {
+    [customSepolia.id]: http(),
+  },
 });
 
 // Supported chains for the app
