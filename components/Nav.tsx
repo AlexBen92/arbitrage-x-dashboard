@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { siteConfig, navLinks, waitlistConfig } from "@/lib/landingConfig";
 
 export default function Nav() {
@@ -26,9 +27,9 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-xl md:text-2xl font-bold gradient-text">
+            <Link href="/" className="text-xl md:text-2xl font-bold gradient-text">
               {siteConfig.name}
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -47,6 +48,12 @@ export default function Nav() {
                 )}
               </a>
             ))}
+            <Link
+              href="/dashboard"
+              className="text-sm font-medium text-gray-300 hover:text-primary-400 transition-colors"
+            >
+              Dashboard
+            </Link>
           </div>
 
           {/* CTA Button */}

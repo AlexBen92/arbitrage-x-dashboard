@@ -1,0 +1,46 @@
+[
+  {
+    "inputs": [],
+    "name": "latestVolatility",
+    "outputs": [
+      {"name": "value", "type": "uint256"},
+      {"name": "timestamp", "type": "uint256"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"name": "asset", "type": "address"}],
+    "name": "getVolatility",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getVolatilityHistory",
+    "outputs": [
+      {"name": "values", "type": "uint256[]"},
+      {"name": "timestamps", "type": "uint256[]"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"name": "asset", "type": "address"}, {"name": "volatility", "type": "uint256"}],
+    "name": "updateVolatility",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "name": "asset", "type": "address"},
+      {"indexed": false, "name": "volatility", "type": "uint256"},
+      {"indexed": false, "name": "timestamp", "type": "uint256"}
+    ],
+    "name": "VolatilityUpdated",
+    "type": "event"
+  }
+]
