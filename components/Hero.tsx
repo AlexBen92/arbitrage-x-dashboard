@@ -31,6 +31,12 @@ export default function Hero() {
                 {heroConfig.ctaPrimary}
               </a>
               <a
+                href="/dashboard"
+                className="px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-500 rounded-full hover:from-blue-500 hover:to-purple-400 transition-all duration-300 shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105"
+              >
+                🪙 Acheter des Tokens
+              </a>
+              <a
                 href="#demo"
                 className="px-8 py-4 text-base font-semibold text-gray-300 bg-crypto-card border border-crypto-border rounded-full hover:border-primary-500/50 hover:bg-crypto-card/80 transition-all duration-300"
               >
