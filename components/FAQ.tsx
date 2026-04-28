@@ -7,13 +7,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 md:py-32 bg-crypto-dark">
+    <section className="py-20 md:py-32 bg-bg-secondary/50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 gradient-text">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4">
             {faqConfig.title}
           </h2>
-          <p className="text-lg text-gray-400">
+          <p className="text-lg text-text-secondary">
             {faqConfig.subtitle}
           </p>
         </div>
@@ -22,17 +22,17 @@ export default function FAQ() {
           {faqConfig.faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-crypto-card border border-crypto-border rounded-2xl overflow-hidden"
+              className="bg-card border border-border rounded-2xl overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-crypto-card/80 transition-colors"
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-card/80 transition-colors"
               >
-                <span className="text-lg font-semibold text-white pr-8">
+                <span className="text-lg font-semibold text-text-primary pr-8">
                   {faq.question}
                 </span>
                 <svg
-                  className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-text-muted flex-shrink-0 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -49,7 +49,7 @@ export default function FAQ() {
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-5 pt-0">
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-text-secondary leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

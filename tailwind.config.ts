@@ -11,24 +11,32 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: {
-          400: "#a78bfa",
-          500: "#8b5cf6",
-          600: "#7c3aed",
+        bg: {
+          primary: "var(--bg-primary)",
+          secondary: "var(--bg-secondary)",
+          card: "var(--bg-card)",
+          border: "var(--bg-border)",
         },
-        accent: {
-          400: "#38bdf8",
-          500: "#0ea5e9",
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
         },
-        crypto: {
-          dark: "#0a0a0f",
-          darker: "#050508",
-          card: "#12121a",
-          border: "#1e1e2e",
+        emerald: {
+          400: "#34d399",
+          500: "#10b981",
+          600: "#059669",
+        },
+        cyan: {
+          400: "#22d3ee",
+          500: "#06b6d4",
+          600: "#0891b2",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
@@ -37,7 +45,7 @@ const config: Config = {
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-20px)" },
         },
       },
     },

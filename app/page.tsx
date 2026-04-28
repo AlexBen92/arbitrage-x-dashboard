@@ -1,28 +1,20 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import BeforeAfter from "@/components/BeforeAfter";
-import GameModes from "@/components/GameModes";
-import HowItWorks from "@/components/HowItWorks";
-import DemoSection from "@/components/DemoSection";
-import Stats from "@/components/Stats";
-import ForWho from "@/components/ForWho";
+import Strategies from "@/components/Strategies";
+import HowItWorksNew from "@/components/HowItWorksNew";
+import PlatformStats from "@/components/PlatformStats";
 import FAQ from "@/components/FAQ";
-import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-crypto-darker">
+    <main className="min-h-screen bg-bg-primary">
       <Nav />
       <Hero />
-      <BeforeAfter />
-      <GameModes />
-      <HowItWorks />
-      <DemoSection />
-      <Stats />
-      <ForWho />
+      <PlatformStats />
+      <Strategies />
+      <HowItWorksNew />
       <FAQ />
-      <Waitlist />
       <Footer />
     </main>
   );
