@@ -36,6 +36,29 @@ interface BacktestMetrics {
   skewness: number;
   kurtosis: number;
   kellyCriterion: number;
+
+  // === ADVANCED VALIDATION METRICS ===
+  // Walk-forward analysis
+  walkForwardInSample: number;
+  walkForwardOutOfSample: number;
+  walkForwardConsistency: number; // % of periods where OOS performed well
+
+  // Anti-overfitting
+  inSampleReturn: number;
+  outOfSampleReturn: number;
+  overfittingRatio: number; // Lower is better
+  crossValidationScore: number;
+
+  // Statistical significance
+  pValue: number;
+  tStatistic: number;
+  isSignificant: boolean;
+  confidenceLevel: number; // 95, 99, etc.
+
+  // Correlation with BTC
+  btcCorrelation: number;
+  btcBeta: number;
+  btcRSquared: number;
 }
 
 interface TokenBacktest {
