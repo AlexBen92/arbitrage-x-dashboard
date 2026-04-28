@@ -49,3 +49,25 @@ export const footerLinks = [
   { name: "Terms", href: "#" },
   { name: "Privacy", href: "#" },
 ];
+
+export const statsConfig = {
+  title: "Live Performance on Sepolia",
+  subtitle: "Real-time metrics from our market-neutral strategies",
+  stats: [
+    {
+      icon: "📈",
+      value: "6",
+      label: "Active Strategies",
+    },
+    {
+      icon: "💰",
+      value: "$0",
+      label: "Total Value Locked (Testnet)",
+    },
+    {
+      icon: "⚡",
+      value: "24/7",
+      label: "Automated Trading",
+    },
+  ],
+};
