@@ -2,17 +2,15 @@
 
 import { http, createConfig } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
-import { walletConnect, injected, coinbaseWallet } from 'wagmi/connectors';
+import { injected, walletConnect } from 'wagmi/connectors';
 
 // Get NEXT_PUBLIC_ prefixed variables only (safe for client-side)
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'e10a8dca90396d988c101f1da7929e44';
-const infuraApiKey = process.env.NEXT_PUBLIC_INFURA_API_KEY || '';
 
 // RPC URLs with fallbacks
 const rpcUrls = [
   'https://rpc.sepolia.org',
   'https://sepolia.deth.org',
-  ...(infuraApiKey ? [`https://sepolia.infura.io/v3/${infuraApiKey}`] : []),
 ];
 
 // Custom Sepolia config
@@ -24,18 +22,33 @@ export const customSepolia = {
   },
 };
 
-// Create wagmi config with proper connectors
+// Create wagmi config with mobile-friendly settings
 export const wagmiConfig = createConfig({
   chains: [customSepolia],
   connectors: [
+    // Injected connector (MetaMask, Trust Wallet, etc.) - optimized for mobile
+    injected({
+      shimDisconnect: false, // Fixed: prevents Rainbow mobile issues
+    }),
+    // WalletConnect - for Rainbow mobile app
     walletConnect({
       projectId,
-      showQrModal: false, // Use RainbowKit's modal instead
-    }),
-    injected({ shimDisconnect: true }),
-    coinbaseWallet({
-      appName: 'Arbitrage X',
-      appLogoUrl: 'https://arbitrage-x-psi.vercel.app/icon-192.png',
+      displayMode: 'modal', // Ensure modal works on mobile
+      mobileWallets: [
+        // Rainbow mobile app
+        {
+          id: 'rainbow',
+          name: 'Rainbow',
+          homepage: 'https://rainbow.download',
+          mobile_link: 'https://rnbwapp.com.link',
+          desktop_link: 'https://rainbow.app',
+          app_store: 'https://apps.apple.com/app/rainbow-ethereum-wallet/id1587765155',
+          play_store: 'https://play.google.com/store/apps/details?id=me.rainbow',
+          webapp_link: 'https://rainbow.me',
+          rdns: 'me.rainbow',
+          chains: [customSepolia.id],
+        },
+      ],
     }),
   ],
   ssr: true,
@@ -44,16 +57,47 @@ export const wagmiConfig = createConfig({
   },
 });
 
-// Supported chains for the app
+// Supported chains
 export const supportedChains = [customSepolia] as const;
+export const CHAIN_IDS = { sepolia: customSepolia.id } as const;
 
-// Chain IDs for easy access
-export const CHAIN_IDS = {
-  sepolia: customSepolia.id,
-} as const;
-
-// Helper to check if chain is supported
 export const isSupportedChain = (chainId?: number): boolean => {
   if (!chainId) return false;
   return supportedChains.some((chain) => chain.id === chainId);
+};
+
+// Mobile detection helpers
+export const isMobile = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+};
+
+export const isIOS = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+};
+
+export const isAndroid = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  return /Android/.test(navigator.userAgent);
+};
+
+// Deep link helper for Rainbow mobile
+export const openRainbowApp = (uri: string): void => {
+  if (typeof window === 'undefined') return;
+
+  // Universal link for iOS
+  const iosLink = `https://rnbwapp.com/link?uri=${encodeURIComponent(uri)}`;
+  // Deep link for Android
+  const androidLink = uri;
+
+  if (isIOS()) {
+    window.location.href = iosLink;
+  } else if (isAndroid()) {
+    window.location.href = androidLink;
+  } else {
+    window.open(iosLink, '_blank');
+  }
 };

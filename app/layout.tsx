@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "@rainbow-me/rainbowkit/styles.css";
 import { siteConfig } from "@/lib/landingConfig";
 import { Web3Providers } from "@/lib/web3/Providers";
 
