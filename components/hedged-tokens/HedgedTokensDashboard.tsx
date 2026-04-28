@@ -5,7 +5,7 @@ import { useAccount, useChainId } from 'wagmi';
 import { HEDGED_TOKENS, HEDGED_TOKENS_BY_TYPE, type HedgedToken, type TokenId } from '@/lib/config/hedgedTokens';
 import { useAllTokensNAV, useTokenNAV, useUSDCBalance, useMintWithApproval } from '@/lib/web3/hedgedTokensHooks';
 import { isSupportedChain } from '@/lib/web3/wagmiConfig';
-import { WalletConnectButton } from '@/components/web3';
+import { SimpleWalletButton } from './SimpleWalletButton';
 
 // === Subcomponents ===
 
@@ -278,7 +278,7 @@ export function HedgedTokensDashboard() {
             <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium hidden sm:block">
               Sepolia Testnet
             </span>
-            <WalletConnectButton />
+            <SimpleWalletButton />
           </div>
         </div>
       </header>
