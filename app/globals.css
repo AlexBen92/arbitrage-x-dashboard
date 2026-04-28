@@ -104,92 +104,145 @@ html {
 
 /* === GRADIENT TEXT === */
 .gradient-text {
-  @apply bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent;
-}
-
-/* === CARD STYLES === */
-.card-glow {
-  @apply relative overflow-hidden;
-}
-
-.card-glow::before {
-  content: "";
-  @apply absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 opacity-0 transition-opacity duration-500;
-  pointer-events: none;
-}
-
-.card-glow:hover::before {
-  @apply opacity-100;
+  background: linear-gradient(to right, #34d399, #22d3ee, #3d8eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* === LIVE BOT WIDGET === */
 .live-bot-widget {
-  @apply bg-card/80 backdrop-blur border border-border rounded-2xl overflow-hidden;
+  background-color: rgba(22, 25, 32, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--bg-border);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .live-bot-widget .widget-header {
-  @apply flex items-center gap-2 px-4 py-3 bg-bg-secondary/50 border-b border-border;
-}
-
-.live-bot-widget .widget-header .pulse-dot {
-  @apply w-2 h-2 rounded-full bg-green-500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(17, 19, 24, 0.5);
+  border-bottom: 1px solid var(--bg-border);
 }
 
 .trade-row {
-  @apply flex items-center gap-3 px-4 py-2.5 hover:bg-bg-secondary/50 transition-colors;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  transition-colors: 0.3s;
+}
+
+.trade-row:hover {
+  background-color: rgba(17, 19, 24, 0.5);
 }
 
 .trade-time {
-  @apply text-xs text-text-muted font-mono w-16;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  width: 4rem;
 }
 
 .trade-strategy {
-  @apply text-sm font-medium text-text-primary flex-1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
 }
 
 .trade-asset {
-  @apply text-xs px-2 py-0.5 rounded bg-bg-secondary text-text-secondary;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
 }
 
 .pnl-positive {
-  @apply text-sm font-semibold text-green-400 font-mono;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #34d399;
+  font-family: var(--font-mono);
 }
 
 .pnl-negative {
-  @apply text-sm font-semibold text-red-400 font-mono;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f87171;
+  font-family: var(--font-mono);
 }
 
 /* === SHARPE BAR === */
 .sharpe-bar {
-  @apply h-1.5 rounded-full bg-bg-secondary overflow-hidden;
+  height: 0.375rem;
+  border-radius: 0.375rem;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
 }
 
 .sharpe-bar-fill {
-  @apply h-full rounded-full transition-all duration-1000;
+  height: 100%;
+  border-radius: 0.375rem;
+  transition: width 1s;
 }
 
-/* === STATS COUNTER === */
+/* === STATS === */
 .stat-value {
-  @apply text-4xl md:text-5xl font-bold font-display text-text-primary tabular-nums;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 .stat-label {
-  @apply text-sm text-text-secondary uppercase tracking-wide mt-2;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
 }
 
 /* === STRATEGY CARD === */
 .strategy-card {
-  @apply bg-card border border-border rounded-2xl p-5 hover:border-border/50 transition-all duration-300;
+  background-color: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  transition: all 0.3s;
 }
 
 .strategy-card:hover {
-  @apply bg-card/90;
+  background-color: rgba(22, 25, 32, 0.9);
+  border-color: rgba(255,255,255,0.1);
 }
 
 .badge-live {
-  @apply px-2 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(52, 211, 153, 0.2);
+  color: #34d399;
 }
 
 .badge-beta {
-  @apply px-2 py-1 rounded-full text-xs font-semibold bg-orange-500/20 text-orange-400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(251, 146, 60, 0.2);
+  color: #fb923c;
 }
