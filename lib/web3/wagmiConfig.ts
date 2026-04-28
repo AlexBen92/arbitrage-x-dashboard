@@ -33,22 +33,7 @@ export const wagmiConfig = createConfig({
     // WalletConnect - for Rainbow mobile app
     walletConnect({
       projectId,
-      displayMode: 'modal', // Ensure modal works on mobile
-      mobileWallets: [
-        // Rainbow mobile app
-        {
-          id: 'rainbow',
-          name: 'Rainbow',
-          homepage: 'https://rainbow.download',
-          mobile_link: 'https://rnbwapp.com.link',
-          desktop_link: 'https://rainbow.app',
-          app_store: 'https://apps.apple.com/app/rainbow-ethereum-wallet/id1587765155',
-          play_store: 'https://play.google.com/store/apps/details?id=me.rainbow',
-          webapp_link: 'https://rainbow.me',
-          rdns: 'me.rainbow',
-          chains: [customSepolia.id],
-        },
-      ],
+      showQrModal: true,
     }),
   ],
   ssr: true,
