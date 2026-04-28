@@ -20,15 +20,7 @@ export function Web3Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider
-          theme="midnight"
-          mode="dark"
-          options={{
-            initialChainId: 11155111,
-            embedBuyInConnectModal: true,
-            walletConnectCTA: 'both',
-          }}
-        >
+        <ConnectKitProvider theme="midnight" mode="dark">
           {children}
         </ConnectKitProvider>
       </QueryClientProvider>
