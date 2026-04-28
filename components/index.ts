@@ -6,6 +6,7 @@ export { TxToast, toastManager, showTxToast, updateTxToast, hideTxToast } from '
 export { ToastContainer } from './ToastContainer'
 export { MintModal } from './MintModal'
 export { RedeemModal } from './RedeemModal'
+export { TestnetBanner } from './TestnetBanner'
 
 // Types
 export type { TxStatus, TxType } from './TxToast'

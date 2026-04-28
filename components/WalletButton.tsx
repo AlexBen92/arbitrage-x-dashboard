@@ -16,7 +16,7 @@ export function WalletButton() {
 
   const isWrongNetwork = isConnected && chain?.id !== sepolia.id
 
-  // État 1 : Non connecté
+  // State 1: Not connected
   if (!isConnected) {
     return (
       <>
@@ -41,7 +41,7 @@ export function WalletButton() {
     )
   }
 
-  // État 2 : Mauvais réseau (pas Sepolia)
+  // State 2: Wrong network (not Sepolia)
   if (isWrongNetwork) {
     return (
       <button
@@ -53,7 +53,7 @@ export function WalletButton() {
     )
   }
 
-  // État 3 : Connecté sur Sepolia ✅
+  // State 3: Connected on Sepolia ✅
   return (
     <div className="wallet-pill">
       <span className="dot-live" />
@@ -72,7 +72,7 @@ export function WalletButton() {
   )
 }
 
-// WalletModal : affiche les connecteurs disponibles
+// WalletModal: shows available wallet connectors
 import type { Connector } from 'wagmi'
 
 interface WalletModalProps {

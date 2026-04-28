@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
 import { WalletButton } from '@/components/WalletButton'
+import { TestnetBanner } from '@/components/TestnetBanner'
 import { showTxToast, hideTxToast } from '@/components/TxToast'
 import { useTokenNAV } from '@/hooks'
 import { STRATEGIES, OWNER_ADDRESS, CONTRACTS, StrategyId } from '@/lib/contracts/addresses'
@@ -37,6 +38,13 @@ export default function AdminPage() {
           <WalletButton />
         </div>
       </header>
+
+      {/* Testnet Banner */}
+      <div className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <TestnetBanner />
+        </div>
+      </div>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Access Control */}

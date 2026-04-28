@@ -10,6 +10,7 @@ import { formatUnits, Log } from 'viem'
 import { WalletButton } from '@/components/WalletButton'
 import { MintModal } from '@/components/MintModal'
 import { RedeemModal } from '@/components/RedeemModal'
+import { TestnetBanner } from '@/components/TestnetBanner'
 import { useTokenNAV, useUserBalance } from '@/hooks'
 import { STRATEGIES, CONTRACTS, StrategyId } from '@/lib/contracts/addresses'
 import { HEDGED_TOKEN_ABI } from '@/lib/contracts/abis'
@@ -93,6 +94,13 @@ export default function DashboardPage() {
           <WalletButton />
         </div>
       </header>
+
+      {/* Testnet Banner */}
+      <div className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <TestnetBanner />
+        </div>
+      </div>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Wallet Gate */}
