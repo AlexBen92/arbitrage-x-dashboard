@@ -21,7 +21,6 @@ const queryClient = new QueryClient({
 
 // ConnectKit config with mobile support
 const config = getDefaultConfig({
-  appName: 'Arbitrage X Dashboard',
   appName: 'OpenClaw',
   appDescription: 'Plateforme de trading quantitatif et backtesting crypto',
   appUrl: 'https://arbitrage-x-frontend.vercel.app',
